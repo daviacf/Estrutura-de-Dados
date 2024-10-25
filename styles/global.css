@@ -135,3 +135,51 @@ footer {
 .spacer {
     padding-top: 12rem;
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-link {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    h1.h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header img {
+        height: 30px;
+    }
+
+    h1.h1, section h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-link {
+        gap: 8px;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Estrutura de Dados</title>
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#"><img src="./assets/Logo-upe-site.png" alt="Logo UPE" width="100"></a>
+        <div class="title">Bem-vindo ao site oficial!</div>
+        <nav class="nav-link">
+            <a href="index.html">Início</a>
+            <a href="./pages/binarysearch.html">Busca binária</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="h1">Jogos Estruturados</h1>
+            <hr>
+            <h2>Navegação</h2>
+            <nav>
+                <ul>
+                    <li><a href="#binarysearch">Busca Binária</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section id="binarysearch">
+            <h2>Busca Binária</h2>
+            <p>Busca Binária é um jogo de adivinhação simples, onde o jogador deve adivinhar um número entre 1 e 100. 
+               O jogo apresenta três níveis de dificuldade, que determinam a quantidade de tentativas (vidas) que o jogador tem para acertar o número.</p>
+            <h3>Descrição do Jogo</h3>
+            <ol>
+                <li><b>Início do jogo:</b> O jogador escolhe entre três níveis de dificuldade:</li>
+                <ul>
+                    <li>Fácil: 100 tentativas.</li>
+                    <li>Médio: 15 tentativas.</li>
+                    <li>Difícil: 7 tentativas.</li>
+                </ul>
+                <li><b>Escolha do número:</b> O computador gera um número entre 1 e 100. O jogador tenta adivinhar o número.</li>
+                <li><b>Dicas:</b> O jogo indica se o número é maior ou menor, e quantas tentativas restam.</li>
+                <li><b>Condições de vitória ou derrota:</b></li>
+                <ul>
+                    <li>O jogador vence se adivinhar antes das tentativas acabarem.</li>
+                    <li>O jogador perde se não acertar dentro das tentativas disponíveis.</li>
+                </ul>
+            </ol>
+        </section>
+
+        <section>
+            <button><a href="./pages/binarysearch.html">Jogar</a></button>
+        </section>
+        
+    </main>
+    <div class="spacer"></div>
+    <footer>
+        <p>&copy; 2024 SI UPE Surubim. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

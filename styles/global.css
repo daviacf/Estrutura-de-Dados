@@ -1,0 +1,137 @@
+/* global.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9;
+}
+
+a:hover {
+    color: #f39c12;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    color: white;
+}
+
+header img {
+    height: 50px;
+}
+
+header .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-link a:hover {
+    color: #f39c12;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1.h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #2980b9;
+    margin: 10px 0;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+section ol, ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+section ol li, ul li {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #2980b9;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f39c12;
+}
+
+button a {
+    color: white;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.spacer {
+    padding-top: 12rem;
+}

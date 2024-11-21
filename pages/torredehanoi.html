@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Torre de Hanói</title>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/hanoi.css">
+</head>
+
+<body>
+    <div id="game">
+        <header class="header full-width">
+            <a href="../index.html"><img src="../assets/Logo-upe-site.png" alt="Logo UPE" width="100"></a>
+            <div class="title">Bem-vindo ao site oficial!</div>
+            <nav class="nav-link">
+                <a href="../index.html">Início</a>
+                <a href="./binarysearch.html">Busca Binária</a>
+                <a href="./torredehanoi.html">Torre de Hanói</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="title">Torre de Hanói</h1>
+
+            <div id="introduction" class="content">
+                <p>
+                    A <strong>Torre de Hanói</strong> é um jogo matemático que consiste em mover todos os discos de uma torre para outra,
+                    seguindo estas regras:
+                </p>
+                <ul>
+                    <li>Você pode mover apenas um disco por vez.</li>
+                    <li>Um disco maior nunca pode ficar sobre um disco menor.</li>
+                    <li>O objetivo é transferir todos os discos da primeira torre para a última, usando a torre intermediária como auxílio.</li>
+                </ul>
+                <p>Para jogar, clique em um disco para selecioná-lo e clique na torre onde deseja movê-lo. Boa sorte!</p>
+            </div>
+
+            <!-- Torres do jogo -->
+            <div class="towers">
+                <div class="tower" data-tower="1"></div>
+                <div class="tower" data-tower="2"></div>
+                <div class="tower" data-tower="3"></div>
+            </div>
+
+            <p id="message"></p>
+            <p id="moves">Movimentos: 0</p>
+            <button id="reset">Reiniciar</button>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 SI UPE Surubim. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="/scripts/hanoi.js"></script>
+</body>
+
+</html>

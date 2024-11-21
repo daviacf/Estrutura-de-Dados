@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o rodapé fique no final */
+    text-align: center;
+}
+
+header {
+    width: 100%; /* Cabeçalho ocupando 100% da largura */
+    background-color: #00254d;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+header .title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Estilo da introdução */
+#introduction {
+    text-align: left;
+    font-size: 16px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 1.5;
+    width: 90%;
+    max-width: 600px;
+}
+
+#introduction ul {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+#introduction ul li {
+    margin-bottom: 5px;
+}
+
+/* Estilos das torres */
+.towers {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.tower {
+    width: 120px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    margin: 0 10px;
+}
+
+/* Estilos dos discos */
+.disk {
+    height: 20px;
+    border-radius: 3px;
+    margin: 2px 0;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    max-width: calc(100% - 10px);
+}
+
+.disk.selected {
+    border: 2px solid red;
+}
+
+/* Estilo do contador de movimentos e mensagens */
+#message {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+    height: 20px;
+}
+
+#moves {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Botão reiniciar */
+button#reset {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button#reset:hover {
+    background-color: #45a049;
+}
+
+/* Rodapé fixo no final */
+footer {
+    margin-top: auto; /* Empurra o rodapé para o final */
+    width: 100%;
+    background-color: #00254d;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVIDADE */
+
+/* Ajustes para telas médias (Tablets, largura < 768px) */
+@media (max-width: 768px) {
+    #introduction {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .tower {
+        width: 100px;
+        height: 250px;
+    }
+
+    .disk {
+        height: 18px;
+        font-size: 14px;
+        width: 85%;
+    }
+
+    #moves {
+        font-size: 16px;
+    }
+
+    button#reset {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+/* Ajustes para telas pequenas (Celulares, largura < 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #introduction {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .towers {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+
+    .tower {
+        width: 90px;
+        height: 180px;
+        margin: 5px;
+    }
+
+    .disk {
+        height: 14px;
+        font-size: 12px;
+        width: 80%;
+    }
+
+    #moves {
+        font-size: 14px;
+    }
+
+    button#reset {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

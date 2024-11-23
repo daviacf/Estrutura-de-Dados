@@ -26,7 +26,7 @@ function setupGame() {
 function createDisk(size) {
     const disk = document.createElement('div');
     disk.classList.add('disk');
-    disk.style.width = `${20 * size + 40}px`;
+    disk.style.width = `${20 * size + 20}px`;
     disk.style.backgroundColor = `hsl(${size * 50}, 70%, 50%)`;
     disk.dataset.size = size;
     return disk;

@@ -46,6 +46,7 @@ header img {
 header .title {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-left: 400px;
 }
 
 .nav-link {

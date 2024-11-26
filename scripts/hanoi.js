@@ -29,6 +29,7 @@ function createDisk(size) {
     disk.style.width = `${20 * size + 20}px`;
     disk.style.backgroundColor = `hsl(${size * 50}, 70%, 50%)`;
     disk.dataset.size = size;
+    disk.innerText = size
     return disk;
 }
 

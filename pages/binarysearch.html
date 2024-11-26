@@ -19,7 +19,9 @@
         <div class="title">Bem-vindo ao site oficial!</div>
         <nav class="nav-link">
             <a href="../index.html">Início</a>
-            <a href="#">Busca binária</a>
+            <a href="#">Busca Binária</a>
+            <a href="./torredehanoi.html">Torre de Hanoi</a>
+            <a href="./campominado.html">Campo Minado</a>
         </nav>
     </header>
 
@@ -31,11 +33,13 @@
                 <button onclick="startGame(1)">Fácil</button>
                 <button onclick="startGame(2)">Médio</button>
                 <button onclick="startGame(3)">Difícil</button>
+                <button onclick="startGame(4)">Impossível</button>
                 <br><br>
                 <div id="game-area" style="display: none;">
                     <p id="message"></p>
-                    <input type="number" id="guess" placeholder="Escolha um número de 1 a 100">
+                    <input type="number" id="guess" placeholder="Escolha um número">
                     <button onclick="makeGuess()">Adivinhar</button>
+                    <p id="available-numbers"></p>
                 </div>
             </div>
         </section>
@@ -45,52 +49,71 @@
         <p>&copy; 2024 SI UPE Surubim. Todos os direitos reservados.</p>
     </footer>
 
-
     <script>
-        let randomNumber, attempts, maxAttempts;
+        let randomNumber, attempts, maxAttempts, availableNumbers;
 
         function startGame(difficulty) {
             document.getElementById('game-area').style.display = 'block';
             document.getElementById('message').innerText = '';
-            randomNumber = Math.floor(Math.random() * 100) + 1;
+            document.getElementById('available-numbers').innerText = '';
+
             switch (difficulty) {
-                case 1:
+                case 1: // Fácil
                     maxAttempts = 100;
+                    availableNumbers = Array.from({ length: 100 }, (_, i) => i + 1);
+                    randomNumber = Math.floor(Math.random() * 100) + 1;
                     break;
-                case 2:
+                case 2: // Médio
                     maxAttempts = 15;
+                    availableNumbers = Array.from({ length: 100 }, (_, i) => i + 1);
+                    randomNumber = Math.floor(Math.random() * 100) + 1;
                     break;
-                case 3:
+                case 3: // Difícil
                     maxAttempts = 7;
+                    availableNumbers = Array.from({ length: 100 }, (_, i) => i + 1);
+                    randomNumber = Math.floor(Math.random() * 100) + 1;
+                    break;
+                case 4: // Impossível
+                    maxAttempts = 10; // Log2(1000) arredondado para cima é 10
+                    availableNumbers = Array.from({ length: 1000 }, (_, i) => i + 1);
+                    randomNumber = Math.floor(Math.random() * 1000) + 1;
                     break;
                 default:
                     maxAttempts = 1;
             }
             attempts = maxAttempts;
-            document.getElementById('message').innerText = `Você tem ${attempts} tentativas. Escolha um número de 1 a 100.`;
+            document.getElementById('message').innerText = `Você tem ${attempts} tentativas. Escolha um número de ${availableNumbers[0]} a ${availableNumbers[availableNumbers.length - 1]}.`;
+            updateAvailableNumbers();
         }
 
         function makeGuess() {
             const guess = parseInt(document.getElementById('guess').value);
-            if (!guess || guess < 1 || guess > 100) {
-                alert('Por favor, insira um número válido entre 1 e 100.');
+            if (!guess || guess < availableNumbers[0] || guess > availableNumbers[availableNumbers.length - 1]) {
+                alert(`Por favor, insira um número válido entre ${availableNumbers[0]} e ${availableNumbers[availableNumbers.length - 1]}.`);
                 return;
             }
 
             attempts--;
             if (guess === randomNumber) {
-                window.alert(`Parabéns, você acertou! O número correto era ${randomNumber}.`)
+                alert(`Parabéns, você acertou! O número correto era ${randomNumber}.`);
                 document.getElementById('game-area').style.display = 'none';
             } else if (attempts > 0) {
                 if (guess > randomNumber) {
                     document.getElementById('message').innerText = `O número escolhido é muito alto. Você tem ${attempts} tentativas restantes.`;
+                    availableNumbers = availableNumbers.filter(num => num < guess);
                 } else {
                     document.getElementById('message').innerText = `O número escolhido é muito baixo. Você tem ${attempts} tentativas restantes.`;
+                    availableNumbers = availableNumbers.filter(num => num > guess);
                 }
+                updateAvailableNumbers();
             } else {
-                window.alert(`Game Over! O número correto era ${randomNumber}.`)
+                alert(`Game Over! O número correto era ${randomNumber}.`);
                 document.getElementById('game-area').style.display = 'none';
             }
+        }
+
+        function updateAvailableNumbers() {
+            document.getElementById('available-numbers').innerText = `Números disponíveis: [${availableNumbers.join(', ')}]`;
         }
     </script>
 </body>

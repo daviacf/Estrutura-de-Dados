@@ -88,9 +88,37 @@
 
         <section id="campominado">
             <h2>Campo Minado</h2>
-            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.</p>
-            
+            <p>O Campo Minado é um jogo que utiliza lógica e estratégia para evitar células que contenham minas escondidas. 
+               O tabuleiro do jogo pode ser representado internamente por uma matriz.</p>
+            <details>
+                <summary>O que é uma matriz?</summary>
+                <p>Uma matriz é uma estrutura de dados bidimensional organizada em linhas e colunas. Cada posição, chamada de célula, 
+                   é identificada por índices que representam sua linha e coluna. É amplamente usada para representar dados organizados, 
+                   como tabelas ou tabuleiros de jogos.</p>
+            </details>
+            <details>
+                <summary>O que é o Campo Minado?</summary>
+                <p>O Campo Minado é um jogo onde o jogador deve revelar células de um tabuleiro sem acertar as minas escondidas. 
+                   Algumas células contêm números que indicam quantas minas estão nas células vizinhas, ajudando o jogador a deduzir a localização das minas.</p>
+            </details>
+            <details>
+                <summary>Como o Campo Minado se relaciona com matrizes?</summary>
+                <p>O tabuleiro do Campo Minado é representado como uma matriz. Aqui estão algumas das principais relações:</p>
+                <ul>
+                    <li>Os índices da matriz representam as posições do tabuleiro (linha e coluna).</li>
+                    <li>Cada célula da matriz pode armazenar:
+                        <ul>
+                            <li>Uma mina;</li>
+                            <li>Um número indicando o total de minas nas células vizinhas;</li>
+                            <li>Um valor vazio para células seguras.</li>
+                        </ul>
+                    </li>
+                    <li>O cálculo dos números em cada célula baseia-se nas células ao redor (vizinhaça 8-direcional).</li>
+                </ul>
+                <p>Portanto, o Campo Minado é um exemplo prático do uso de matrizes na resolução de problemas e na criação de jogos interativos.</p>
+            </details>
         </section>
+        
 
         <section>
             <button><a href="./pages/campominado.html">Jogar</a></button>

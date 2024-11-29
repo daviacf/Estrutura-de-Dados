@@ -41,26 +41,49 @@
         </section>
 
         <section id="binarysearch">
-            <h2>Busca Binária</h2>
-            <p>Busca Binária é um jogo de adivinhação simples, onde o jogador deve adivinhar um número entre 1 e 100. 
-               O jogo apresenta três níveis de dificuldade, que determinam a quantidade de tentativas (vidas) que o jogador tem para acertar o número.</p>
-            <h3>Descrição do Jogo</h3>
-            <ol>
-                <li><b>Início do jogo:</b> O jogador escolhe entre três níveis de dificuldade:</li>
+            <h2>Advinhação com Busca Binária</h2>
+            <p>Busca Binária é um jogo de adivinhação baseado em um algoritmo eficiente, onde o jogador tenta adivinhar um número escolhido pelo computador entre 1 e 100.</p>
+            
+            <details>
+                <summary>O que é a Busca Binária?</summary>
+                <p>A Busca Binária é um algoritmo utilizado para encontrar um elemento em uma lista ordenada, dividindo repetidamente o espaço de busca ao meio. 
+                   O princípio é simples: a cada tentativa, descarta-se metade dos números com base na comparação.</p>
+                <p>É amplamente usado devido à sua eficiência, com complexidade \(O(\log n)\), o que significa que reduz rapidamente o número de possibilidades.</p>
+            </details>
+            
+            <details>
+                <summary>Como funciona o jogo de Advinhação?</summary>
+                <p>O jogo aplica o conceito de Busca Binária em um cenário prático. O computador escolhe um número aleatório entre 1 e 100, e o jogador tenta adivinhá-lo. 
+                   A cada tentativa, o jogo informa se o número é maior ou menor, ajudando o jogador a restringir a busca.</p>
+            </details>
+            
+            <details>
+                <summary>Regras do jogo</summary>
                 <ul>
-                    <li>Fácil: 100 tentativas.</li>
-                    <li>Médio: 15 tentativas.</li>
-                    <li>Difícil: 7 tentativas.</li>
+                    <li><b>Escolha do nível:</b> O jogador começa selecionando um nível de dificuldade que define o número de tentativas:</li>
+                    <ul>
+                        <li>Fácil: 100 tentativas.</li>
+                        <li>Médio: 15 tentativas.</li>
+                        <li>Difícil: 7 tentativas.</li>
+                        <li>Impossivel: 10 tentativas (1 a 1000).</li>
+                    </ul>
+                    <li><b>Escolha do número:</b> O computador gera um número entre 1 e 100.</li>
+                    <li><b>Dicas:</b> Após cada palpite, o jogo informa se o número é maior ou menor.</li>
+                    <li><b>Condições de vitória ou derrota:</b></li>
+                    <ul>
+                        <li>O jogador vence se adivinhar o número antes que as tentativas se esgotem.</li>
+                        <li>O jogador perde se não acertar dentro do número de tentativas disponíveis.</li>
+                    </ul>
                 </ul>
-                <li><b>Escolha do número:</b> O computador gera um número entre 1 e 100. O jogador tenta adivinhar o número.</li>
-                <li><b>Dicas:</b> O jogo indica se o número é maior ou menor, e quantas tentativas restam.</li>
-                <li><b>Condições de vitória ou derrota:</b></li>
-                <ul>
-                    <li>O jogador vence se adivinhar antes das tentativas acabarem.</li>
-                    <li>O jogador perde se não acertar dentro das tentativas disponíveis.</li>
-                </ul>
-            </ol>
+            </details>
+            
+            <details>
+                <summary>Por que usar a Busca Binária?</summary>
+                <p>A Busca Binária torna o jogo mais eficiente, pois utiliza lógica para minimizar o número de tentativas. Em vez de chutar aleatoriamente, 
+                   o jogador pode seguir uma estratégia de divisão ao meio, o que é muito mais rápido e eficaz.</p>
+            </details>
         </section>
+        
 
         <section>
             <button><a href="./pages/binarysearch.html">Jogar</a></button>
@@ -68,19 +91,43 @@
         
         <section id="torredehanoi">
             <h2>Torre de Hanoi</h2>
-            <p>A Torre de Hanoi é um jogo matemático onde o objetivo é mover uma pilha de discos de uma haste para outra, seguindo regras específicas.</p>
-            <h3>Descrição do Jogo</h3>
-            <ol>
-                <li><b>Objetivo:</b> Mover todos os discos da haste de origem para a haste de destino.</li>
-                <li><b>Regras:</b></li>
+            <p>A Torre de Hanoi é um jogo matemático que utiliza uma estrutura lógica semelhante à pilha para resolver o problema de movimentação de discos entre hastes.</p>
+            
+            <details>
+                <summary>O que é uma pilha?</summary>
+                <p>Uma pilha é uma estrutura de dados linear que segue o princípio LIFO (Last In, First Out), ou seja, o último elemento a entrar é o primeiro a sair.</p>
+                <p>As operações principais de uma pilha são:</p>
+                <ul>
+                    <li><b>Push:</b> Adiciona um elemento no topo da pilha.</li>
+                    <li><b>Pop:</b> Remove o elemento do topo da pilha.</li>
+                    <li><b>Peek:</b> Consulta o elemento no topo sem removê-lo.</li>
+                </ul>
+                <p>Pilhas são amplamente usadas em algoritmos, incluindo o jogo Torre de Hanoi, devido à sua capacidade de organizar e gerenciar dados de forma controlada.</p>
+            </details>
+            
+            <details>
+                <summary>O que é a Torre de Hanoi?</summary>
+                <p>A Torre de Hanoi é um quebra-cabeça matemático onde o objetivo é mover uma pilha de discos de uma haste para outra, seguindo regras específicas:</p>
                 <ul>
                     <li>Somente um disco pode ser movido por vez.</li>
                     <li>Um disco maior nunca pode ser colocado sobre um disco menor.</li>
-                    <li>Há uma haste auxiliar que pode ser usada temporariamente.</li>
+                    <li>É permitido usar uma haste auxiliar temporariamente.</li>
                 </ul>
-                
-            </ol>
+                <p>O desafio é resolver o problema no menor número possível de movimentos, que é dado pela fórmula <strong>2^n-1</strong> onde <strong>n</strong> é o número de discos.</p>
+            </details>
+            
+            <details>
+                <summary>Como a Torre de Hanoi se relaciona com pilhas?</summary>
+                <p>O jogo Torre de Hanoi pode ser modelado utilizando pilhas para representar as hastes:</p>
+                <ul>
+                    <li>Cada haste é uma pilha que armazena os discos.</li>
+                    <li>O movimento de um disco entre hastes equivale às operações <b>pop</b> (remover) de uma pilha e <b>push</b> (adicionar) em outra pilha.</li>
+                    <li>A lógica do jogo respeita as regras de uma pilha, garantindo que apenas o disco no topo de uma haste possa ser movido.</li>
+                </ul>
+                <p>Ao implementar a Torre de Hanoi em programação, usar pilhas ajuda a organizar os discos e simplificar a lógica do algoritmo.</p>
+            </details>
         </section>
+        
 
         <section>
             <button><a href="./pages/torredehanoi.html">Jogar</a></button>

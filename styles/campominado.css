@@ -3,12 +3,6 @@ body {
 	text-align: center;
 }
 
-#integrantes {
-	border: 1px solid black;
-	border-radius: 20px;
-	margin-bottom: 30px;
-}
-
 #integrantes p {
 	display: inline-block;
 	margin-left: 10px;
@@ -26,12 +20,8 @@ body {
 	margin-right: 20px;
 }
 
-#info p .nome {
-	width: 200px;
-}
-
 #info p .numero {
-	width: 40px;
+	width: 30px;
 }
 
 #info p .botao {
@@ -96,7 +86,13 @@ section {
     border-radius: 10px;
     padding: 15px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 100000px;
     margin: 20px auto;
     box-shadow: 5px 5px 0px black;
+}
+
+@media (max-width: 768px) {
+	section{
+		max-width: 370px;
+	}
 }

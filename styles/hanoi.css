@@ -126,10 +126,10 @@ footer {
         padding: 10px;
     }
 
-    .tower {
+    /* .tower {
         width: 100px;
         height: 250px;
-    }
+    } */
 
     .disk {
         height: 18px;
@@ -160,11 +160,11 @@ footer {
         overflow-x: scroll;
     }
 
-    .tower {
+    /* .tower {
         width: 90px;
         height: 180px;
         margin: 5px;
-    }
+    } */
 
     .disk {
         height: 14px;

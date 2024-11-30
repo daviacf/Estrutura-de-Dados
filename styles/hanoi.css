@@ -9,34 +9,7 @@ body {
     text-align: center;
 }
 
-header {
-    width: 100%; /* Cabeçalho ocupando 100% da largura */
-    color: white;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-}
 
-header a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-header .title {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 18px;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
 
 /* Estilo da introdução */
 #introduction {
@@ -176,13 +149,6 @@ footer {
 
 /* Ajustes para telas pequenas (Celulares, largura < 480px) */
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
 
     #introduction {
         font-size: 12px;

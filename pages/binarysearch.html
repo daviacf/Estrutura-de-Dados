@@ -38,8 +38,10 @@
                 <br><br>
                 <div id="game-area" style="display: none;">
                     <p id="message"></p>
+                    <form action="#">
                     <input type="number" id="guess" placeholder="Escolha um número">
                     <button onclick="makeGuess()">Adivinhar</button>
+                    </form>
                     <p id="available-numbers"></p>
                 </div>
             </div>
@@ -53,6 +55,24 @@
             <a href="https://www.linkedin.com/in/victorraphaelleite/" target="_blank">@victorraphaelmilk</a>
         </p>
     </footer>
+
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>PARABÉNS, VOCÊ VENCEU!</h2>
+            <p id="finalMoves"></p>
+            <button id="closeModal" onclick="closeWinModal()">Fechar</button>
+        </div>
+    </div>
+    
+
+    <div id="loseModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>GAME OVER!</h2>
+            <p id="loseMessage"></p>
+            <button id="closeLoseModal" onclick="closeLoseModal()">Fechar</button>
+        </div>
+    </div>
+    
 
     <script>
         let randomNumber, attempts, maxAttempts, availableNumbers;
@@ -97,10 +117,11 @@
                 alert(`Por favor, insira um número válido entre ${availableNumbers[0]} e ${availableNumbers[availableNumbers.length - 1]}.`);
                 return;
             }
-
+        
             attempts--;
             if (guess === randomNumber) {
-                alert(`Parabéns, você acertou! O número correto era ${randomNumber}.`);
+                document.getElementById('finalMoves').innerText = `Você acertou o número ${randomNumber} com ${maxAttempts - attempts} tentativas!`;
+                showWinModal();
                 document.getElementById('game-area').style.display = 'none';
             } else if (attempts > 0) {
                 if (guess > randomNumber) {
@@ -112,10 +133,31 @@
                 }
                 updateAvailableNumbers();
             } else {
-                alert(`Game Over! O número correto era ${randomNumber}.`);
+                document.getElementById('loseMessage').innerText = `Você perdeu! O número correto era ${randomNumber}.`;
+                showLoseModal();
                 document.getElementById('game-area').style.display = 'none';
             }
         }
+        
+        function showWinModal() {
+            const modal = document.getElementById('winModal');
+            modal.classList.add('show', 'modal-win');
+        }
+        
+        function closeWinModal() {
+            const modal = document.getElementById('winModal');
+            modal.classList.remove('show', 'modal-win');
+        }
+        
+        function showLoseModal() {
+            const modal = document.getElementById('loseModal');
+            modal.classList.add('show', 'modal-lose');
+        }
+        
+        function closeLoseModal() {
+            const modal = document.getElementById('loseModal');
+            modal.classList.remove('show', 'modal-lose');
+        }    
 
         function updateAvailableNumbers() {
             document.getElementById('available-numbers').innerText = `Números disponíveis: [${availableNumbers.join(', ')}]`;

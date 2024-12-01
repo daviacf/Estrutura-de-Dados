@@ -109,8 +109,12 @@ function novoJogo(x, y, b) {
 			var r = document.createElement("tr");
 			for(var j = 0; j < colunas; j++) {
 				var d = document.createElement("td");
-				d.setAttribute("id", i.toString()+"-"+j.toString());
+				d.setAttribute("id", i.toString() + "-" + j.toString());
 				d.setAttribute("onclick", "clickCelula(this.id);");
+				d.addEventListener("contextmenu", function (event) {
+					event.preventDefault(); // Evitar menu contextual padrão
+					toggleFlag(this.id);    // Alternar bandeira
+				});
 
 				if(campo[i][j].valor != 0) {
 					var img = document.createElement("img");
@@ -233,22 +237,47 @@ function restaurar() {
 }
 
 function fimDeJogo(vitoria) {
-	var msg;
+    if (vitoria) {
+        exibirModal('modal-vitoria');
+    } else {
+        exibirModal('modal-derrota');
+    }
 
-	if(vitoria) {
-		msg = "Vitória";
-	}else {
-		msg = "Derrota";
-	}
+    // Bloquear cliques no campo
+    for (var i = 0; i < linhas; i++) {
+        for (var j = 0; j < colunas; j++) {
+            var celula = document.getElementById(i.toString() + "-" + j.toString());
+            celula.setAttribute("onclick", "clickFimDeJogo()");
+            if (campo[i][j].valor == -1 && !vitoria) abrirCelula(i, j);
+        }
+    }
+}
 
-	for(var i = 0; i < linhas; i++) {
-		for(var j = 0; j < linhas; j++) {
-			var celula = document.getElementById(i.toString()+"-"+j.toString());
-			celula.setAttribute("onclick", "clickFimDeJogo()");
-			if((campo[i][j].valor == -1) && (!vitoria))
-				abrirCelula(i, j);
-		}
-	}
-	
-	alert("Fim de Jogo! "+msg);
+// Exibir modal
+function exibirModal(modalId) {
+    document.getElementById(modalId).style.display = 'flex';
+}
+
+// Fechar modal
+function fecharModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+function toggleFlag(idCelula) {
+    var coord = idCelula.split("-");
+    var linha = parseInt(coord[0]);
+    var coluna = parseInt(coord[1]);
+    var celula = document.getElementById(idCelula);
+
+    // Verificar se a célula já está aberta
+    if (campo[linha][coluna].estado) return;
+
+    // Verificar se já existe uma bandeira e alternar
+    if (celula.classList.contains("flag")) {
+        celula.classList.remove("flag");
+        celula.innerHTML = ""; // Remove a bandeira
+    } else {
+        celula.classList.add("flag");
+        celula.innerHTML = "🚩"; // Adiciona a bandeira
+    }
 }
